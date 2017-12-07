@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PracticaObligatoriaDISPMOV_T2</string>
+    <string name="apuestasTtle">Apuestas on-line</string>
+    <string name="registro">Registro</string>
+    <string name="apuestas">Apuestas</string>
+    <string name="ajustes">Ajustes</string>
+    <string name="sorteo">Sorteo</string>
+</resources>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.jj.practicaobligatoriadispmov_t2.MainActivity">
+
+    <Button
+        android:id="@+id/registroBT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        tools:layout_editor_absoluteX="88dp"
+        tools:layout_editor_absoluteY="58dp" />
+
+    <Button
+        android:id="@+id/apuestasBT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        tools:layout_editor_absoluteX="81dp"
+        tools:layout_editor_absoluteY="122dp" />
+
+    <Button
+        android:id="@+id/ajustesBT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        tools:layout_editor_absoluteX="81dp"
+        tools:layout_editor_absoluteY="199dp" />
+
+    <Button
+        android:id="@+id/sorteoBT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        tools:layout_editor_absoluteX="81dp"
+        tools:layout_editor_absoluteY="309dp" />
+
+    <TextView
+        android:id="@+id/apuestasTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="81dp"
+        tools:layout_editor_absoluteY="6dp" />
+
+</android.support.constraint.ConstraintLayout>
