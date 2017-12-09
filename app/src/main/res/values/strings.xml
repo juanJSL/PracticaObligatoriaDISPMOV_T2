@@ -5,4 +5,9 @@
     <string name="apuestas">Apuestas</string>
     <string name="ajustes">Ajustes</string>
     <string name="sorteo">Sorteo</string>
+    <string name="nombre">Nombre</string>
+    <string name="mail">E-mail</string>
+    <string name="fecha">Fecha Nacimiento (dd/mm/aaaa)</string>
+    <string name="validar">Validar</string>
+    <string name="volver">Volver</string>
 </resources>
