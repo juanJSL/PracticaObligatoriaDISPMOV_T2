@@ -10,4 +10,17 @@
     <string name="fecha">Fecha Nacimiento (dd/mm/aaaa)</string>
     <string name="validar">Validar</string>
     <string name="volver">Volver</string>
+    <string name="toastFaltanDatos">Debe completar todos los datos para registrarse</string>
+    <string name="registroCompletado">Quedas registrado</string>
+    <string name="menorDeEdad">Un menor no puede registrarse en esta aplicacion</string>
+    <string name="registroNoCompletado">Usted no se ha registrado</string>
+    <string name="datosRegistro">Datos del registro:</string>
+    <string name="fNac">Fecha de nacimiento:</string>
+    <string name="apuestasTitle">Apuestas</string>
+    <string name="futbol">Futbol</string>
+    <string name="tenis">Tenis</string>
+    <string name="baloncesto">Baloncesto</string>
+    <string name="balonmano">Balonmano</string>
+
+
 </resources>
