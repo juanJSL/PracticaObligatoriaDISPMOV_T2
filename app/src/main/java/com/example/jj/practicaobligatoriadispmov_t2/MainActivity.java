@@ -8,11 +8,19 @@ import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    private static final int CODIGO = 0;
+
+    private static final String FUTBOL = "FUTBOL";
+    private static final String TENIS = "TENIS";
+    private static final String BALONCESTO = "BALONCESTO";
+    private static final String BALONMANO = "BALONMANO";
+    private static final int CODIGO_REGISTRO = 0;
+    private static final int CODIGO_APUESTAS = 1;
     private static boolean registrado = false;
     private static String nombre;
     private static String mail;
     private static String fNac;
+    private static String apuestaSeleccionada;
+
 
 
     @Override
@@ -22,31 +30,38 @@ public class MainActivity extends AppCompatActivity {
     }
     public void abrirRegistro(View v){
         Intent i = new Intent(this, Registro.class);
-        startActivityForResult(i,CODIGO);
+        startActivityForResult(i,CODIGO_REGISTRO);
     }
 
-    protected void onActivityResult( int requestCode, int resultCode, Intent data) {
-        if (requestCode == CODIGO && resultCode == RESULT_OK) {
-            registrado = data.getExtras().getBoolean("REGISTRADO");
-            if(registrado){
-                nombre = data.getExtras().getString("NOMBRE");
-                mail = data.getExtras().getString("MAIL");
-                fNac = data.getExtras().getString("FECHA");
-                String datosRegistro= getText(R.string.datosRegistro)+
-                        getString(R.string.nombre)+"\n"+nombre+"" +
-                        getString(R.string.mail)+"\n"+mail+"" +
-                        getString(R.string.fNac)+"\n"+fNac;
-                new AlertDialog.Builder(this).setMessage(datosRegistro).show();
-            }else{
-                new AlertDialog.Builder(this).setMessage(R.string.registroNoCompletado).show();
-            }
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode) {
+            case CODIGO_REGISTRO:
+                if (resultCode == RESULT_OK) {
+                    registrado = data.getExtras().getBoolean("REGISTRADO");
+                    if (registrado) {
+                        nombre = data.getExtras().getString("NOMBRE");
+                        mail = data.getExtras().getString("MAIL");
+                        fNac = data.getExtras().getString("FECHA");
+                        String datosRegistro = getText(R.string.datosRegistro) +
+                                getString(R.string.nombre) + "\n" + nombre + "" +
+                                getString(R.string.mail) + "\n" + mail + "" +
+                                getString(R.string.fNac) + "\n" + fNac;
+                        new AlertDialog.Builder(this).setMessage(datosRegistro).show();
+                    } else {
+                        new AlertDialog.Builder(this).setMessage(R.string.registroNoCompletado).show();
+                    }
+                }
+                break;
 
-
+            case CODIGO_APUESTAS:
+                apuestaSeleccionada= data.getExtras().getString("APUESTA");
+                new AlertDialog.Builder(this).setMessage(getString(R.string.apuestaSeleccionada)+" "+apuestaSeleccionada).show();
+                break;
         }
     }
 
     public void abrirApuestas(View v){
         Intent i = new Intent(this, Apuestas.class);
-        startActivityForResult(i,CODIGO);
+        startActivityForResult(i,CODIGO_APUESTAS);
     }
 }

@@ -21,6 +21,10 @@
     <string name="tenis">Tenis</string>
     <string name="baloncesto">Baloncesto</string>
     <string name="balonmano">Balonmano</string>
-
+    <string name="aceptar">Aceptar</string>
+    <string name="apuestaGuardada">Apuesta guardada</string>
+    <string name="apuestaNoSeleccionada">No has seleccionado ninguna apuesta</string>
+    <string name="masDeUnaApuesta">La versión Lite sólo admite un tipo de apuesta. Compra nuestra versión de Pago</string>
+    <string name="apuestaSeleccionada">Has seleccionado hacer apuestas sobre:</string>
 
 </resources>
