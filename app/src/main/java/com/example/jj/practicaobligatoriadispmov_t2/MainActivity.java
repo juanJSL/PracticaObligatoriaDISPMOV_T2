@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.*;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -99,4 +101,31 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
+    //Creacion del menu
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menumainactivity, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+
+        if (id == R.id.acercaDe) {
+            Intent i = new Intent(this, AcercaDe.class);
+            startActivity(i);
+            return true;
+        }else{
+            Intent i = new Intent(this, Ayuda.class);
+            startActivity(i);
+            return true;
+        }
+
+
+        //return super.onOptionsItemSelected(item);
+    }
 }

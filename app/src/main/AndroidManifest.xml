@@ -19,6 +19,8 @@
         <activity android:name=".Registro" />
         <activity android:name=".Apuestas" />
         <activity android:name=".Ajustes" />
+        <activity android:name=".AcercaDe" />
+        <activity android:name=".Ayuda"></activity>
     </application>
 
 </manifest>

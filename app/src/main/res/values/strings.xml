@@ -37,5 +37,10 @@
     <string name="noSpinnerSelected">Elige tu apuesta</string>
     <string name="numNoValido">Error, cada combinacion debe ser entre 0 y 300</string>
     <string name="numNoIntroducido">Elige tu combinacion ganadora</string>
+    <string name="acercaDeTitle">Acerca de</string>
+    <string name="ayudaTitle">Ayuda</string>
+    <string name="autor">Autor: Juan Javier Simón Lucas</string>
+    <string name="nomPractica">PR UD2 INTERFAZ DE USUARIO</string>
+    <string name="anyo">2017</string>
 
 </resources>
