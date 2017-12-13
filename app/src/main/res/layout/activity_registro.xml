@@ -78,7 +78,7 @@
         android:layout_marginLeft="16dp" />
 
     <Button
-        android:id="@+id/volverBT"
+        android:id="@+id/volverBoton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

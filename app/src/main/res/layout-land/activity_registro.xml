@@ -79,7 +79,7 @@
         app:layout_constraintTop_toBottomOf="@+id/mailET" />
 
     <Button
-        android:id="@+id/volverBT"
+        android:id="@+id/volverBoton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"

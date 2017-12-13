@@ -2,6 +2,9 @@ package com.example.jj.practicaobligatoriadispmov_t2;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,8 +13,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 public class Registro extends AppCompatActivity implements DatePickerDialog.OnDateSetListener{
     private static int anyo, mes, dia;
@@ -64,7 +69,7 @@ public class Registro extends AppCompatActivity implements DatePickerDialog.OnDa
     /*
 
      */
-    public void validar(View v) {
+    private void validar(View v) {
 
         SimpleDateFormat formatoFecha = new SimpleDateFormat("dd-MM-yyyy");
         if(!nombre.getText().toString().equals(getText(R.string.nombre))
@@ -110,5 +115,28 @@ public class Registro extends AppCompatActivity implements DatePickerDialog.OnDa
     }
 
 
+    /**
+     * Created by JJ on 13/12/2017.
+     */
 
+    public static class ViewPagerAdapter extends FragmentPagerAdapter {
+        List<Fragment> fragmentList=new ArrayList<>();
+        public ViewPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return fragmentList.get(position);
+        }
+
+        @Override
+        public int getCount() {
+            return fragmentList.size();
+        }
+
+        public void addFragment(Fragment fragment){
+            fragmentList.add(fragment);
+        }
+    }
 }

@@ -26,5 +26,16 @@
     <string name="apuestaNoSeleccionada">No has seleccionado ninguna apuesta</string>
     <string name="masDeUnaApuesta">La versión Lite sólo admite un tipo de apuesta. Compra nuestra versión de Pago</string>
     <string name="apuestaSeleccionada">Has seleccionado hacer apuestas sobre:</string>
+    <string name="dinero">DINERO</string>
+    <string name="combinacion">COMBINACION</string>
+    <string name="dineroApostar">Dinero a apostar</string>
+    <string name="guardar">Guardar</string>
+    <string name="noRegistrado">Error no puedes apostar si no te has registrado</string>
+    <string name="noApostado">Error no puedes realizar ajustes si no has seleccionado el tipo de apuesta</string>
+    <string name="num1">Numero1</string>
+    <string name="num2">Numero2</string>
+    <string name="noSpinnerSelected">Elige tu apuesta</string>
+    <string name="numNoValido">Error, cada combinacion debe ser entre 0 y 300</string>
+    <string name="numNoIntroducido">Elige tu combinacion ganadora</string>
 
 </resources>

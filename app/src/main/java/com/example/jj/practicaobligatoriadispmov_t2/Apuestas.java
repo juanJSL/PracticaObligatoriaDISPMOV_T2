@@ -41,6 +41,8 @@ public class Apuestas extends AppCompatActivity {
     }
 
     public void volverApuestas(View v){
+        Intent i = new Intent();
+        i.putExtra("APUESTA", "");
         setResult(RESULT_OK);
         finish();
     }

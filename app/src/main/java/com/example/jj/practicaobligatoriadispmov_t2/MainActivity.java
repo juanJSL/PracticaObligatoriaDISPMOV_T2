@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,11 +16,13 @@ public class MainActivity extends AppCompatActivity {
     private static final String BALONMANO = "BALONMANO";
     private static final int CODIGO_REGISTRO = 0;
     private static final int CODIGO_APUESTAS = 1;
+    private static final int CODIGO_AJUSTES = 2;
     private static boolean registrado = false;
+    private static boolean apuestaSleccionada = false;
     private static String nombre;
     private static String mail;
     private static String fNac;
-    private static String apuestaSeleccionada;
+    private static String apuestaSeleccionada="";
 
 
 
@@ -27,10 +30,28 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
     }
     public void abrirRegistro(View v){
         Intent i = new Intent(this, Registro.class);
         startActivityForResult(i,CODIGO_REGISTRO);
+    }
+
+    public void abrirApuestas(View v){
+        Intent i = new Intent(this, Apuestas.class);
+        startActivityForResult(i,CODIGO_APUESTAS);
+    }
+
+    public void abrirAjustes(View v){
+        if(apuestaSeleccionada.equals(""))//||apuestaSeleccionada.equals(null))
+            Toast.makeText(getApplicationContext(), R.string.noApostado, Toast.LENGTH_LONG).show();
+        else {
+            Intent i = new Intent(this, Ajustes.class);
+            Bundle bundle = new Bundle();
+            bundle.putString("APUESTA", apuestaSeleccionada);
+            i.putExtras(bundle);
+            startActivityForResult(i, CODIGO_AJUSTES);
+        }
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -60,8 +81,5 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void abrirApuestas(View v){
-        Intent i = new Intent(this, Apuestas.class);
-        startActivityForResult(i,CODIGO_APUESTAS);
-    }
+
 }
