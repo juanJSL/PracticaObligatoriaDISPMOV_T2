@@ -1,5 +1,6 @@
 package com.example.jj.practicaobligatoriadispmov_t2;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -87,8 +88,14 @@ public class Ajustes extends AppCompatActivity {
             if (Integer.parseInt(num1.getText().toString()) < 0 || Integer.parseInt(num1.getText().toString()) > 300
                     || Integer.parseInt(num2.getText().toString()) < 0 || Integer.parseInt(num2.getText().toString()) > 300)
                 Toast.makeText(getApplicationContext(), R.string.numNoValido, Toast.LENGTH_LONG).show();
-            else
-                Toast.makeText(getApplicationContext(), "Todo correcto", Toast.LENGTH_LONG).show();
+            else {
+                Intent i = new Intent();
+                i.putExtra("DINERO_APOSTADO", Integer.parseInt(spinnerDinero.getSelectedItem().toString()));
+                i.putExtra("RESULTADO_LOCAL", Integer.parseInt(num1.getText().toString()));
+                i.putExtra("RESULTADO_VISITANTE", Integer.parseInt(num2.getText().toString()));
+                setResult(RESULT_OK, i);
+                finish();
+            }
         }catch (NumberFormatException e){
             Toast.makeText(getApplicationContext(), R.string.numNoIntroducido, Toast.LENGTH_LONG).show();
         }

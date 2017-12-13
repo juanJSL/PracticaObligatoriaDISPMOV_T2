@@ -23,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
     private static String mail;
     private static String fNac;
     private static String apuestaSeleccionada="";
+    private int dineroApostado;
+    private int resultLocal;
+    private int resultVisitante;
 
 
 
@@ -38,12 +41,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void abrirApuestas(View v){
-        Intent i = new Intent(this, Apuestas.class);
-        startActivityForResult(i,CODIGO_APUESTAS);
+        if(registrado) {
+            Intent i = new Intent(this, Apuestas.class);
+            startActivityForResult(i, CODIGO_APUESTAS);
+        }else
+            Toast.makeText(getApplicationContext(), R.string.noRegistrado, Toast.LENGTH_LONG).show();
     }
 
     public void abrirAjustes(View v){
-        if(apuestaSeleccionada.equals(""))//||apuestaSeleccionada.equals(null))
+        if(apuestaSeleccionada.equals(""))
             Toast.makeText(getApplicationContext(), R.string.noApostado, Toast.LENGTH_LONG).show();
         else {
             Intent i = new Intent(this, Ajustes.class);
@@ -75,9 +81,20 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case CODIGO_APUESTAS:
-                apuestaSeleccionada= data.getExtras().getString("APUESTA");
-                new AlertDialog.Builder(this).setMessage(getString(R.string.apuestaSeleccionada)+" "+apuestaSeleccionada).show();
+                if (resultCode == RESULT_OK) {
+                    apuestaSeleccionada = data.getExtras().getString("APUESTA");
+                    new AlertDialog.Builder(this).setMessage(getString(R.string.apuestaSeleccionada) + " " + apuestaSeleccionada).show();
+
+                }
                 break;
+            case CODIGO_AJUSTES:
+                if (resultCode == RESULT_OK) {
+                    dineroApostado = data.getExtras().getInt("DINERO_APOSTADO");
+                    resultLocal = data.getExtras().getInt("RESULTADO_LOCAL");
+                    resultVisitante = data.getExtras().getInt("RESULTADO_VISITANTE");
+                }
+                break;
+
         }
     }
 
