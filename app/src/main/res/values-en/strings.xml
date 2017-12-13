@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">PracticaObligatoriaDISPMOV_T2</string>
+    <string name="apuestasTtle">Betting on-line</string>
+    <string name="registro">Registro</string>
+    <string name="apuestas">Betting</string>
+    <string name="ajustes">Setting</string>
+    <string name="sorteo">Draw</string>
+    <string name="nombre">Name</string>
+    <string name="mail">E-mail</string>
+    <string name="fecha">Birth date (dd/mm/aaaa)</string>
+    <string name="validar">Validate</string>
+    <string name="volver">Return</string>
+    <string name="toastFaltanDatos">You must complete all the data to register</string>
+    <string name="registroCompletado">You are registered</string>
+    <string name="menorDeEdad">A minor can not register in this application</string>
+    <string name="registroNoCompletado">You have not registered</string>
+    <string name="datosRegistro">Registration data:</string>
+    <string name="fNac">Birth date:</string>
+    <string name="apuestasTitle">Betting</string>
+    <string name="futbol">Futbol</string>
+    <string name="tenis">Tenis</string>
+    <string name="baloncesto">Basketball</string>
+    <string name="balonmano">Handball</string>
+    <string name="aceptar">OK</string>
+    <string name="apuestaGuardada">Saved bet</string>
+    <string name="apuestaNoSeleccionada">You have not selected any bet</string>
+    <string name="masDeUnaApuesta">The Lite version only supports one type of bet. Buy our paid version</string>
+    <string name="apuestaSeleccionada">You have selected to place bets on:</string>
+    <string name="dinero">MONEY</string>
+    <string name="combinacion">COMBINATION</string>
+    <string name="dineroApostar">Money to bet</string>
+    <string name="guardar">Save</string>
+    <string name="noRegistrado">Error you can not bet if you have not registered</string>
+    <string name="noApostado">Error you can not make adjustments if you have not selected the type of bet</string>
+    <string name="num1">Number1</string>
+    <string name="num2">Number2</string>
+    <string name="noSpinnerSelected">Choose your bet</string>
+    <string name="numNoValido">Error, each combination must be between 0 and 300</string>
+    <string name="numNoIntroducido">Choose your winning combination</string>
+    <string name="acercaDeTitle">About</string>
+    <string name="ayudaTitle">Help</string>
+    <string name="autor">Autor: Juan Javier Simón Lucas</string>
+    <string name="nomPractica">PR UD2 INTERFAZ DE USUARIO</string>
+    <string name="anyo">2017</string>
+
+</resources>

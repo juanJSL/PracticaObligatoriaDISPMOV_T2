@@ -12,19 +12,19 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String FUTBOL = "FUTBOL";
-    private static final String TENIS = "TENIS";
-    private static final String BALONCESTO = "BALONCESTO";
-    private static final String BALONMANO = "BALONMANO";
-    private static final int CODIGO_REGISTRO = 0;
-    private static final int CODIGO_APUESTAS = 1;
-    private static final int CODIGO_AJUSTES = 2;
-    private static boolean registrado = false;
-    private static boolean apuestaSleccionada = false;
-    private static String nombre;
-    private static String mail;
-    private static String fNac;
-    private static String apuestaSeleccionada="";
+    private final String FUTBOL = "FUTBOL";
+    private final String TENIS = "TENIS";
+    private final String BALONCESTO = "BALONCESTO";
+    private final String BALONMANO = "BALONMANO";
+    private final int CODIGO_REGISTRO = 0;
+    private final int CODIGO_APUESTAS = 1;
+    private final int CODIGO_AJUSTES = 2;
+    private boolean registrado = false;
+    private boolean apuestaSleccionada = false;
+    private String nombre;
+    private String mail;
+    private String fNac;
+    private String apuestaSeleccionada="";
     private int dineroApostado;
     private int resultLocal;
     private int resultVisitante;
@@ -72,9 +72,9 @@ public class MainActivity extends AppCompatActivity {
                         mail = data.getExtras().getString("MAIL");
                         fNac = data.getExtras().getString("FECHA");
                         String datosRegistro = getText(R.string.datosRegistro) +
-                                getString(R.string.nombre) + "\n" + nombre + "" +
-                                getString(R.string.mail) + "\n" + mail + "" +
-                                getString(R.string.fNac) + "\n" + fNac;
+                                getString(R.string.nombre) + "\n" + nombre + ": " +
+                                getString(R.string.mail) + "\n" + mail + ": " +
+                                getString(R.string.fNac) + ": " + fNac;
                         new AlertDialog.Builder(this).setMessage(datosRegistro).show();
                     } else {
                         new AlertDialog.Builder(this).setMessage(R.string.registroNoCompletado).show();

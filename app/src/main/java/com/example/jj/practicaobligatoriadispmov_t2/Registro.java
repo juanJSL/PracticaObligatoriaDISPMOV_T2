@@ -19,10 +19,10 @@ import java.util.Date;
 import java.util.List;
 
 public class Registro extends AppCompatActivity implements DatePickerDialog.OnDateSetListener{
-    private static int anyo, mes, dia;
-    private static EditText fecha;
-    private static EditText nombre;
-    private static EditText mail;
+    private int anyo, mes, dia;
+    private EditText fecha;
+    private EditText nombre;
+    private EditText mail;
     private static DatePickerDialog.OnDateSetListener dateSetListener;
 
     @Override
@@ -69,7 +69,7 @@ public class Registro extends AppCompatActivity implements DatePickerDialog.OnDa
     /*
 
      */
-    private void validar(View v) {
+    public void validar(View v) {
 
         SimpleDateFormat formatoFecha = new SimpleDateFormat("dd-MM-yyyy");
         if(!nombre.getText().toString().equals(getText(R.string.nombre))
