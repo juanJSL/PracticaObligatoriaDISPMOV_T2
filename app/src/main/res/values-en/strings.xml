@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">PracticaObligatoriaDISPMOV_T2</string>
     <string name="apuestasTtle">Betting on-line</string>
-    <string name="registro">Registro</string>
+    <string name="registro">Sign in</string>
     <string name="apuestas">Betting</string>
     <string name="ajustes">Setting</string>
     <string name="sorteo">Draw</string>
@@ -42,5 +42,4 @@
     <string name="autor">Autor: Juan Javier Simón Lucas</string>
     <string name="nomPractica">PR UD2 INTERFAZ DE USUARIO</string>
     <string name="anyo">2017</string>
-
 </resources>

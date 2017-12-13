@@ -23,7 +23,7 @@ public class Registro extends AppCompatActivity implements DatePickerDialog.OnDa
     private EditText fecha;
     private EditText nombre;
     private EditText mail;
-    private static DatePickerDialog.OnDateSetListener dateSetListener;
+    private DatePickerDialog datePickerDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,16 +33,6 @@ public class Registro extends AppCompatActivity implements DatePickerDialog.OnDa
         fecha = (EditText) findViewById(R.id.fechaET);
         nombre = (EditText) findViewById(R.id.nombreET);
         mail = (EditText) findViewById(R.id.mailET);
-
-        dateSetListener = new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker view, int year, int mes, int dia) {
-                anyo=year;
-                mes=mes+1;
-                dia=dia;
-                fecha.setText(dia+"-"+mes+"-"+anyo);
-            }
-        };
     }
 
     public void abrirCalendario(View v){
@@ -53,7 +43,7 @@ public class Registro extends AppCompatActivity implements DatePickerDialog.OnDa
         anyo=calendario.get(Calendar.YEAR);
 
 
-        DatePickerDialog datePickerDialog = new DatePickerDialog(this, dateSetListener,anyo, mes, dia);
+        datePickerDialog = new DatePickerDialog(this, this,anyo, mes, dia);
         datePickerDialog.show();
     }
 
@@ -112,31 +102,5 @@ public class Registro extends AppCompatActivity implements DatePickerDialog.OnDa
         i.putExtra("REGISTRADO", false);
         setResult(RESULT_OK, i);
         finish();
-    }
-
-
-    /**
-     * Created by JJ on 13/12/2017.
-     */
-
-    public static class ViewPagerAdapter extends FragmentPagerAdapter {
-        List<Fragment> fragmentList=new ArrayList<>();
-        public ViewPagerAdapter(FragmentManager fm) {
-            super(fm);
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            return fragmentList.get(position);
-        }
-
-        @Override
-        public int getCount() {
-            return fragmentList.size();
-        }
-
-        public void addFragment(Fragment fragment){
-            fragmentList.add(fragment);
-        }
     }
 }

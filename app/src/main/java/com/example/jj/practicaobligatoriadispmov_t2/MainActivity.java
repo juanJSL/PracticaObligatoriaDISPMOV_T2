@@ -12,15 +12,11 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private final String FUTBOL = "FUTBOL";
-    private final String TENIS = "TENIS";
-    private final String BALONCESTO = "BALONCESTO";
-    private final String BALONMANO = "BALONMANO";
     private final int CODIGO_REGISTRO = 0;
     private final int CODIGO_APUESTAS = 1;
     private final int CODIGO_AJUSTES = 2;
     private boolean registrado = false;
-    private boolean apuestaSleccionada = false;
+    private boolean apostado = false;
     private String nombre;
     private String mail;
     private String fNac;
