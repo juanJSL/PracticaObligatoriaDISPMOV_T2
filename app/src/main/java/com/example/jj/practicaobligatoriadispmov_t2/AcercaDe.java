@@ -12,6 +12,7 @@ public class AcercaDe extends AppCompatActivity {
         setContentView(R.layout.activity_acerca_de);
     }
 
+    //Vuelve a la pantalla principal
     public void volverAcercaDe(View v){
         finish();
     }

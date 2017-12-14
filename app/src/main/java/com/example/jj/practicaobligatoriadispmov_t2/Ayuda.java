@@ -12,6 +12,7 @@ public class Ayuda extends AppCompatActivity {
         setContentView(R.layout.activity_ayuda);
     }
 
+    //Vuelve a la pantalla principal
     public void volverAyuda(View v){
         finish();
     }

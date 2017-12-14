@@ -30,6 +30,7 @@ public class Ajustes extends AppCompatActivity {
         num1 = (EditText) findViewById(R.id.numero1);
         num2 = (EditText) findViewById(R.id.numero2);
 
+        //Identifico el TextView que muestra el partido
         partido = (TextView) findViewById(R.id.partido);
         //Cambio el titulo del partido en funcion de lo que se pase como parametro
         partido.setText(partidoJugado(String.valueOf(getIntent().getExtras().get("APUESTA"))));
@@ -41,22 +42,26 @@ public class Ajustes extends AppCompatActivity {
         adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerDinero.setAdapter(adaptador);
 
+        //Identifico y activo el tabhost
         tabHost = (TabHost) findViewById(R.id.tabHost);
         tabHost.setup();//Para activarlo
 
+        //Creo la pestaña de dinero y la de combinacion
         dinero = tabHost.newTabSpec("tabDinero");
         combinacion = tabHost.newTabSpec("tabCombinacion");
 
+        //Cambio el titulo de cada una de las pestañas
         dinero.setIndicator(getString(R.string.dinero));
         dinero.setContent(R.id.tabDinero);
         combinacion.setIndicator(getString(R.string.combinacion));
         combinacion.setContent(R.id.tabCombinacion);
 
-        //añadir las tabs
+        //Añado las tabs
         tabHost.addTab(dinero);
         tabHost.addTab(combinacion);
     }
 
+    //En funcion de lo recibido desde la mainActivity muestro un partido u otro
     private String partidoJugado(String tipoApuesta) {
         String str="";
         switch (tipoApuesta) {
@@ -76,19 +81,24 @@ public class Ajustes extends AppCompatActivity {
         return str;
     }
 
+    //Vuelve a la pantalla principal
     public void volverAjustes(View v){
         finish();
     }
 
+    //Comprueba que todos los calores sean correctos y si lo son vuelve a la pantalla principal y le envia los datos introducidos
     public void guardarAjustes(View v){
+        //Compruebo que el spinner tiene un valor seleccionado
         if(spinnerDinero.getSelectedItem()==null)
             Toast.makeText(getApplicationContext(), R.string.noSpinnerSelected, Toast.LENGTH_LONG).show();
         else
         try {
+            //Compruebo que los resultados introducidos son valores validos
             if (Integer.parseInt(num1.getText().toString()) < 0 || Integer.parseInt(num1.getText().toString()) > 300
                     || Integer.parseInt(num2.getText().toString()) < 0 || Integer.parseInt(num2.getText().toString()) > 300)
                 Toast.makeText(getApplicationContext(), R.string.numNoValido, Toast.LENGTH_LONG).show();
             else {
+                //Si son validos envio los valores a la pantalla principal
                 Intent i = new Intent();
                 i.putExtra("DINERO_APOSTADO", Integer.parseInt(spinnerDinero.getSelectedItem().toString()));
                 i.putExtra("RESULTADO_LOCAL", Integer.parseInt(num1.getText().toString()));
@@ -97,6 +107,7 @@ public class Ajustes extends AppCompatActivity {
                 finish();
             }
         }catch (NumberFormatException e){
+            //Mensaje de error si no se introduce ninguna combinacion
             Toast.makeText(getApplicationContext(), R.string.numNoIntroducido, Toast.LENGTH_LONG).show();
         }
 

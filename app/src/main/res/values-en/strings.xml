@@ -42,4 +42,10 @@
     <string name="autor">Autor: Juan Javier Simón Lucas</string>
     <string name="nomPractica">PR UD2 INTERFAZ DE USUARIO</string>
     <string name="anyo">2017</string>
+    <string name="ayudaTxt">The operation of the application is as follows: \n\n
+First you must register for them you must enter your name, e-mail, email and date of birth. Once all the data have been entered by pressing the validate button, if everything is correct, the application will automatically return you to the main screen, showing a confirmation message of the data. \n\n
+IMPORTANT: In order to register in this application you must be of legal age, if you are not of legal age you can press the return button to go to the main screen, if you do not fill in any of the fields you will not be able to register and pressing the validate button will indicate the error. \n\n
+Once you have registered the next thing you should do is indicate the type of bet you want to make, it is very easy just check the box for the type of bet you want. Once you have selected the option that most interests you click on the accept button and it will automatically return you to the main screen, if you are hesitant and prefer to think about it before checking an option you can press the return button to return to the main screen. \n\n
+Since this version is free only allows one type of bet test our paid version to activate multiple bet types.\n\n
+We are finishing now you must choose your winning combination how much you want to bet and what will be the result that makes you a millionaire? Press the settings button to set the amount of money you want to bet and what you think the outcome of the game will be. To do this you must scroll through the different tabs of this screen and select a quantity of money and indicate the result for the game, once the data is entered, do not forget to save your bet by pressing the save button. If you are hesitant you can always press the back button and return to the main tab.</string>
 </resources>
