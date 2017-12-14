@@ -83,8 +83,7 @@ public class Registro extends AppCompatActivity implements DatePickerDialog.OnDa
                 if (edad < 18)
                     //Error si es menor de edad
                     Toast.makeText(getApplicationContext(), R.string.menorDeEdad, Toast.LENGTH_LONG).show();
-                else {
-                    /* Si todo es correcto devuelve los datos introcucidos a la pantalla principal. */
+                else {//Si todo es correcto devuelve los datos introcucidos a la pantalla principal.
                     Toast.makeText(getApplicationContext(), R.string.registroCompletado, Toast.LENGTH_LONG).show();
                     Intent i = new Intent();
                     i.putExtra("REGISTRADO", true);
