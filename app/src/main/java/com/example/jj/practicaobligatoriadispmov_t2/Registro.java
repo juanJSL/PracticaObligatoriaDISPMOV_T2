@@ -65,11 +65,8 @@ public class Registro extends AppCompatActivity implements DatePickerDialog.OnDa
     public void validar(View v) {
         //Compruebo que se hayan insertado todos los datos
         SimpleDateFormat formatoFecha = new SimpleDateFormat("dd-MM-yyyy");
-        if(!nombre.getText().toString().equals(getText(R.string.nombre))
-                &&!nombre.getText().toString().equals("")
-                &&!mail.getText().toString().equals(getText(R.string.mail))
+        if(!nombre.getText().toString().equals("")
                 &&!mail.getText().toString().equals("")
-                &&!fecha.getText().toString().equals(getText(R.string.fecha))
                 &&!fecha.getText().toString().equals("")) {
         //Si se han introducido todos los datos compruebo la edad
             fNac = null;
