@@ -4,7 +4,7 @@
     <string name="registro">Sign in</string>
     <string name="apuestas">Betting</string>
     <string name="ajustes">Setting</string>
-    <string name="sorteo">Draw</string>
+    <string name="resultado">Draw</string>
     <string name="nombre">Name</string>
     <string name="mail">E-mail</string>
     <string name="fecha">Birth date (dd/mm/aaaa)</string>

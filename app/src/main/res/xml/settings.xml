@@ -5,13 +5,13 @@
         android:title="@string/registro">
 
         <EditTextPreference
-            android:key="nombre"
+            android:key="nombrePref"
             android:title="@string/nombre"
             android:defaultValue=" "
             android:singleLine="true"/>
 
         <EditTextPreference
-            android:key="mail"
+            android:key="mailPref"
             android:title="@string/mail"
             android:defaultValue=" "
             android:singleLine="true"/>

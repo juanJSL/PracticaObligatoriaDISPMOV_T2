@@ -1,11 +1,15 @@
 package com.example.jj.practicaobligatoriadispmov_t2;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceFragment;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.*;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -30,7 +34,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        //Cargo los valores por defecto de las preferencias
+        PreferenceManager.setDefaultValues(this, R.xml.settings, false);
+        mostrarPreferencias();
     }
 
     //Metodo para abrir la pantalla de registro
@@ -72,14 +78,19 @@ public class MainActivity extends AppCompatActivity {
 
                     registrado = data.getExtras().getBoolean("REGISTRADO");
 
-                    //Si el usuario se ha registrado guardo los valores que se reciben de la activity Registro
+                    /******************************************************************************************************************
+                    ****Si el usuario se ha registrado guardo los valores que se reciben de la activity Registro en las preferencias***
+                    *******************************************************************************************************************/
                     if (registrado) {
-                        nombre = data.getExtras().getString("NOMBRE");
-                        mail = data.getExtras().getString("MAIL");
+                        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+                        SharedPreferences.Editor editor = preferences.edit();
+                        editor.putString("nombrePref", data.getExtras().getString("NOMBRE"));
+                        editor.putString("mailPref", data.getExtras().getString("MAIL"));
+                        editor.commit();
                         fNac = data.getExtras().getString("FECHA");
-                        String datosRegistro = getText(R.string.datosRegistro) +
-                                getString(R.string.nombre) + "\n" + nombre + ": " +
-                                getString(R.string.mail) + "\n" + mail + ": " +
+                        String datosRegistro = getText(R.string.datosRegistro) + "\n"+
+                                getString(R.string.nombre) + ": " + data.getExtras().getString("NOMBRE") + "\n" +
+                                getString(R.string.mail) + ": " + data.getExtras().getString("MAIL") + "\n" +
                                 getString(R.string.fNac) + ": " + fNac;
                         new AlertDialog.Builder(this).setMessage(datosRegistro).show();
                     } else
@@ -128,8 +139,11 @@ public class MainActivity extends AppCompatActivity {
             Intent i = new Intent(this, Ayuda.class);
             startActivity(i);
             return true;
+            /*************************************
+             ****** OPCION PARA LAS SETTINGS******
+             *************************************/
         }else{
-            Intent i = new Intent(this, Ayuda.class);
+            Intent i = new Intent(this, SettingsActivity.class);
             startActivity(i);
             return true;
         }
@@ -162,4 +176,22 @@ public class MainActivity extends AppCompatActivity {
         resultLocal = recEstado.getInt("resultLocal");
         resultVisitante = recEstado.getInt("resultVisitante");
     }
+
+
+    public void mostrarPreferencias(){
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        TextView nombrePref = (TextView) findViewById(R.id.nomPreference);
+        nombrePref.setText(preferences.getString("nombrePref","no"));
+        TextView mPreg = (TextView) findViewById(R.id.mailPreference);
+        mPreg.setText(preferences.getString("mailPref","no"));
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mostrarPreferencias();
+
+    }
+
 }

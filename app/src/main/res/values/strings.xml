@@ -4,7 +4,7 @@
     <string name="registro">Registro</string>
     <string name="apuestas">Apuestas</string>
     <string name="ajustes">Ajustes</string>
-    <string name="sorteo">Sorteo</string>
+    <string name="resultado">Resultado</string>
     <string name="nombre">Nombre</string>
     <string name="mail">E-mail</string>
     <string name="fecha">Fecha Nacimiento (dd/mm/aaaa)</string>
@@ -49,6 +49,9 @@ Una vez te has registrado lo siguiente que debes hacer es indicar el tipo de apu
 Ya que esta versión es gratuita solo permite un tipo de apuesta prueba nuestra versión de pago para activar múltiples tipos de apuesta.\n\n
 Ya estamos terminando ahora debes elegir tu combinación ganadora cuanto quieres apostar y ¿Cuál será el resultado que te haga millonario? Pulsa el botón ajustes para configurar la cantidad de dinero que quieres apostar y cual crees que será el resultado del partido. Para ello debes desplazarte por las distintas pestañas de esta pantalla y seleccionar una cantidad de dinero e indicar el resultado para el partido, una vez introducidos los datos no te olvides de guardar tu apuesta pulsando el botón guardara. Si estás indeciso siempre puedes pulsar el botón volver y regresar a la pestaña principal.
 </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
