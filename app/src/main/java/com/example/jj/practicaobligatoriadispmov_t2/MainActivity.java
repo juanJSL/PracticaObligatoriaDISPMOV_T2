@@ -2,6 +2,8 @@ package com.example.jj.practicaobligatoriadispmov_t2;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AlertDialog;
@@ -37,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         //Cargo los valores por defecto de las preferencias
         PreferenceManager.setDefaultValues(this, R.xml.settings, false);
         mostrarPreferencias();
+
     }
 
     //Metodo para abrir la pantalla de registro
@@ -67,6 +70,15 @@ public class MainActivity extends AppCompatActivity {
             i.putExtras(bundle);
             startActivityForResult(i, CODIGO_AJUSTES);
         }
+    }
+
+
+    /******************************************
+     *********ABRIR PANTALLA RESULTADO*********
+     ******************************************/
+    public void abrirResultado(View v){
+        Intent i = new Intent(this, Resultado.class);
+        startActivity(i);
     }
 
     //Obtengo los datos introducidos por el usuario uso un switch case
@@ -179,11 +191,16 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void mostrarPreferencias(){
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        TextView nombrePref = (TextView) findViewById(R.id.nomPreference);
-        nombrePref.setText(preferences.getString("nombrePref","no"));
-        TextView mPreg = (TextView) findViewById(R.id.mailPreference);
-        mPreg.setText(preferences.getString("mailPref","no"));
+        SQLiteDatabase sqLiteDatabase = new BDHelper(this).getReadableDatabase();
+        String consulta =
+                "SELECT "+BDHelper.COL_T1+" FROM "+ BDHelper.TABLE_NAME;
+        Cursor cursor = sqLiteDatabase.rawQuery(consulta, null);
+
+        cursor.moveToFirst();
+        cursor.move(1);
+
+        TextView t = findViewById(R.id.nomPreference);
+//          t.setText(cursor.mo);
 
     }
 

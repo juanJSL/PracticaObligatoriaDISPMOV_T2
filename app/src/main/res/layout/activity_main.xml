@@ -37,10 +37,11 @@
         android:text="@string/ajustes" />
 
     <Button
-        android:id="@+id/sorteoBT"
+        android:id="@+id/resultadoBT"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/resultado"/>
+        android:text="@string/resultado"
+        android:onClick="abrirResultado"/>
 
     <TextView
         android:id="@+id/nomPreference"

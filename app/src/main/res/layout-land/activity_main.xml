@@ -40,7 +40,7 @@
         android:onClick="abrirAjustes"/>
 
     <Button
-        android:id="@+id/sorteoBT"
+        android:id="@+id/resultadoBT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
