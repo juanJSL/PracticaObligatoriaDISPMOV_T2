@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:key="registro"
+        android:title="@string/registro">
+
+        <EditTextPreference
+            android:key="nombre"
+            android:title="@string/nombre"
+            android:defaultValue=" "
+            android:singleLine="true"/>
+
+        <EditTextPreference
+            android:key="mail"
+            android:title="@string/mail"
+            android:defaultValue=" "
+            android:singleLine="true"/>
+    </PreferenceCategory>
+</PreferenceScreen>

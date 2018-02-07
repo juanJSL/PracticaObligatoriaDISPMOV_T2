@@ -123,8 +123,12 @@ public class MainActivity extends AppCompatActivity {
             Intent i = new Intent(this, AcercaDe.class);
             startActivity(i);
             return true;
-        }else{
+        }else if(id == R.id.ayuda){
             //Iniciar ayuda
+            Intent i = new Intent(this, Ayuda.class);
+            startActivity(i);
+            return true;
+        }else{
             Intent i = new Intent(this, Ayuda.class);
             startActivity(i);
             return true;
