@@ -41,8 +41,6 @@ public class MainActivity extends AppCompatActivity {
         //Compruebo si el usuario esta conectado
         isConectado();
 
-        mostrarPreferencias();
-
     }
 
     //Metodo para abrir la pantalla de registro
@@ -216,17 +214,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void mostrarPreferencias(){
-        preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        TextView t = (TextView) findViewById(R.id.nomPreference);
-        t.setText(preferences.getString("apuestaDefecto","fallo")+"");
-
-    }
-
     @Override
     protected void onResume() {
         super.onResume();
-        mostrarPreferencias();
     }
 
 

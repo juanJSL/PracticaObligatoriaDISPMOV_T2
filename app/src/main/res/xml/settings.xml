@@ -29,8 +29,7 @@
 
         <ListPreference
             android:key="apuestaDefecto"
-            android:title="@string/tituloPreferenciasRegistro"
-            android:summary="ListPreference summary"
+            android:title="@string/titleListPreference"
             android:entries="@array/entradas"
             android:entryValues="@array/valores" />
 

@@ -43,16 +43,4 @@
         android:text="@string/resultado"
         android:onClick="abrirResultado"/>
 
-    <TextView
-        android:id="@+id/nomPreference"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="nombre" />
-
-    <TextView
-        android:id="@+id/mailPreference"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/mail" />
-
 </LinearLayout>
