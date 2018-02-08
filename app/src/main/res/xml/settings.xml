@@ -2,7 +2,7 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <PreferenceCategory
         android:key="registro"
-        android:title="@string/registro">
+        android:title="@string/tituloPreferenciasRegistro">
 
         <EditTextPreference
             android:key="nombrePref"
@@ -15,5 +15,24 @@
             android:title="@string/mail"
             android:defaultValue=" "
             android:singleLine="true"/>
+
+        <CheckBoxPreference
+            android:key="conectado"
+            android:title="@string/conectado"
+            android:defaultValue="true"/>
+    </PreferenceCategory>
+
+
+    <PreferenceCategory
+        android:key="apuesta"
+        android:title="@string/resultado">
+
+        <ListPreference
+            android:key="apuestaDefecto"
+            android:title="@string/tituloPreferenciasRegistro"
+            android:summary="ListPreference summary"
+            android:entries="@array/entradas"
+            android:entryValues="@array/valores" />
+
     </PreferenceCategory>
 </PreferenceScreen>

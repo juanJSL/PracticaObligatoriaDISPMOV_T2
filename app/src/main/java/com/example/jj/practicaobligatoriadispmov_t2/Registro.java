@@ -87,7 +87,7 @@ public class Registro extends AppCompatActivity implements DatePickerDialog.OnDa
                     i.putExtra("NOMBRE", nombre.getText().toString());
                     i.putExtra("MAIL", mail.getText().toString());
                     i.putExtra("FECHA", fecha.getText().toString());
-                    setResult(RESULT_OK, i);
+                    setResult(RESULT_OK,i);
                     finish();
                 }
             } catch (Exception e) {

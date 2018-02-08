@@ -1,4 +1,7 @@
 <resources>
+    <string name="tituloPreferenciasRegistro">Datos del usuario</string>
+    <string name="titleListPreference">Elija su apuesta por defecto</string>
+    <string name="conectado">Conectado</string>
     <string name="app_name">PracticaObligatoriaDISPMOV_T2</string>
     <string name="apuestasTtle">Apuestas on-line</string>
     <string name="registro">Registro</string>

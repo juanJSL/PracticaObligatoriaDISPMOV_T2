@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="entradas">
+        <item>Futbol</item>
+        <item>Baloncesto</item>
+        <item>Tenis</item>
+        <item>Balonmano</item>
+    </string-array>
+    <string-array name="valores">
+        <item>FUTBOL</item>
+        <item>BALONCESTO</item>
+        <item>TENIS</item>
+        <item>BALONMANO</item>
+    </string-array>
+</resources>
